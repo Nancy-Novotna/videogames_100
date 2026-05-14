@@ -18,8 +18,6 @@
     </ul>
 </nav>
 
-<!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus error eaque quod, omnis optio vitae maiores
-    veniam, voluptas deleniti vel atque molestiae hic labore in veritatis rem velit sit sunt.</p> -->
 
 {% if request.user.is_authenticated %}
 <h1 class="title">Hello, {{ request.user }}!</h1>
@@ -35,7 +33,7 @@
 
 <section id="trending">
     <h1 class="trends">Currently Trending <a class="icon_trends" href="#trending"><i
-                class="fa-solid fa-circle-down"></i></a> </h1>
+                class="fa-solid fa-circle-down"></i></a></h1>
     <div class="container">
         <ul id="games">
             {% for game in games %}
