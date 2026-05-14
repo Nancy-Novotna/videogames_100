@@ -1,0 +1,51 @@
+{% extends "videogames_100/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<nav>
+    <ul class="nav_ul">
+        <div class="nav_li">
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'games' %}">Games</a></li>
+            <li><a href="{% url 'admin:index' %}" target="_blank">Admin Interface</a></li>
+            {% if request.user.is_authenticated %}
+            <li><a href="{% url 'logout' %}">Log out</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Log in</a></li>
+            {% endif %}
+        </div>
+    </ul>
+</nav>
+
+{% if request.user.is_authenticated %}
+<h1 class="title">Hello, {{ request.user }}!</h1>
+{% else %}
+<h1 class="title">100% Videogames</h1>
+{% endif %}
+
+<section class="search_bar">
+    <form>
+        <input id="search" type="text" autofocus placeholder="Search for a game...">
+    </form>
+</section>
+
+<section id="trending">
+    <h1 class="trends">Currently Trending <a class="icon_trends" href="#trending"><i
+                class="fa-solid fa-circle-down"></i></a> </h1>
+    <div class="container">
+        <ul id="games">
+            {% for game in games %}
+            <li id="games_list">
+                <img src="{% static game.picture %}" alt="{{ game.title }}">
+                <h2>{{ game.title }}</h2>
+                <p>Genre: {{ game.genre.all|join:", " }}</p>
+                <p>Developer: {{ game.developer }}</p>
+                <!-- <p>Publisher: {{ game.publisher }}</p> -->
+                <p>Release Date: {{ game.release_date }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endblock %}

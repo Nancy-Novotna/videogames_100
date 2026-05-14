@@ -1,0 +1,57 @@
+{% extends "videogames_100/layout.html" %}
+{% load static %}
+
+{% block body %}
+<!-- {% include "videogames_100/index.html" %} -->
+
+<nav>
+    <ul class="nav_ul">
+        <div class="nav_li">
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'games' %}">Games</a></li>
+            <li><a href="{% url 'admin:index' %}" target="_blank">Admin Interface</a></li>
+            {% if request.user.is_authenticated %}
+            <li><a href="{% url 'logout' %}">Log out</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Log in</a></li>
+            {% endif %}
+        </div>
+    </ul>
+</nav>
+
+<h1 class="title">Games</h1>
+<br>
+<br>
+<section id="trending">
+    <div class="search_container">
+        <form method="get">
+            <div class="filters_container">
+                <h1 class="trends">Filters</h1>
+                <div class="filters">
+                    {{ filter.form.as_p }}
+                </div>
+                <div class="filter_buttons">
+                    <input class="filter_submit" type="submit" value="Submit">
+                    <a class="filter_reset" href="{% url 'games' %}">Reset</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <div class="container">
+        <ul id="games">
+            {% for game in filter.qs %}
+            <li id="games_list">
+                <img src="{% static game.picture %}" alt="{{ game.title }}">
+                <h2>{{ game.title }}</h2>
+                <p>Genre: {{ game.genre.all|join:", " }}</p>
+                <p>Developer: {{ game.developer }}</p>
+                <p>Release Date: {{ game.release_date }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+
+{% endblock %}
