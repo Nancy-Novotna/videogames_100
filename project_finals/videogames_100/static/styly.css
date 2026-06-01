@@ -174,8 +174,13 @@ h2 {
     border-radius: 10px;
     color: white;
     width: 250px;
-    height: 500px;
+    height: 570px;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.desc_games {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
 }
 
 /* GAMES */
@@ -203,11 +208,14 @@ h2 {
 
 /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-    .videogames_100 {
+
+    .nav_li {
+        width: fit-content;
         font-size: 20px;
+        flex-wrap: wrap;
     }
 
-    #search {
+    /* #search {
         font-size: 20px;
         padding: 20px;
         width: 300px;
@@ -215,23 +223,52 @@ h2 {
 
     #search::placeholder {
         font-size: 5px;
-    }
+    }  */
 }
 
 /* // Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
-    .videogames_100 {
-        font-size: 30px;
-        height: 20vh;
+
+    .nav_li {
+        width: fit-content;
+        font-size: 20px;
+        flex-wrap: wrap;
     }
 
+    .title {
+        font-size: 60px;
+        text-align: center;
+    }
+
+
     #search {
-        font-size: 25px;
+        width: 230px;
         padding: 30px;
     }
 
     #search::placeholder {
-        font-size: 25px;
+        position: relative;
+        white-space: pre-line;
+        text-align: center;
+    }
+
+    #trending {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #games {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #games_list {
+        width: fit-content;
+        max-width: 300px;
+        /* margin: auto 0; */
+        gap: 20px;
     }
 }
 
@@ -241,23 +278,26 @@ h2 {
         font-size: 70px;
     }
 
-    #search {
+    /* #search {
         font-size: 28px;
         padding: 35px;
-    }
+    } */
 
     #search::placeholder {
         font-size: 28px;
     }
 
-    .title {
-        font-size: 80px;
-        padding: 0;
-    }
 }
 
 /* LAPTOP */
 @media (max-width: 1550px) {
+
+    /* #search {
+        font-size: 29px;
+        padding: 80px;
+        width: 600px;
+        height: 50px;
+    } */
 
     .container {
         width: 1400px;
@@ -283,19 +323,19 @@ h2 {
 /* // Large devices (desktops, less than 1200px) */
 @media (max-width: 1199.98px) {
 
-    #search {
+    /* #search {
         font-size: 29px;
         padding: 38px;
-    }
+    } */
 
     #search::placeholder {
         font-size: 29px;
     }
 
-    #trending {
+    /* #trending {
         padding: 30px;
         width: 500px;
-    }
+    } */
 
     .container {
         width: 100%;
