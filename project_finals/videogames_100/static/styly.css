@@ -197,8 +197,8 @@ h2 {
 
 .search_container {
     display: flex;
-    justify-content: start;
-    width: 1980px;
+    /* justify-content: start; */
+    /* width: 1980px; */
 }
 
 #search_games::placeholder {
@@ -270,6 +270,18 @@ h2 {
         /* margin: auto 0; */
         gap: 20px;
     }
+
+
+    .filters_container {
+        flex-direction: column;
+        width: min-content;
+    }
+
+    .filters {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
 }
 
 /* // Medium devices (tablets, less than 992px) */
@@ -303,13 +315,8 @@ h2 {
         width: 1400px;
     }
 
-    .filters_container {
-        background-color: green;
-    }
-
     .search_container {
-        background-color: red;
-        width: 1500px;
+        width: max-content;
     }
 
     .form-control {
@@ -369,7 +376,6 @@ h2 {
     display: flex;
     justify-content: start;
     align-items: center;
-    width: 1980px;
     padding: 20px;
     flex-direction: column;
     gap: 20px;
