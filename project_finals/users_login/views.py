@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def user(request):
@@ -29,3 +30,7 @@ def logout_view(request):
     return render(request, "users_login/login.html", {
         "message": "Logged out."
     })
+
+@login_required
+def profile(request):
+    return render(request, "user_steam.html")

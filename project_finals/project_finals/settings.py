@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django_filters',
+    'social_django'
 ]
 
 MIDDLEWARE = [
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'project_finals.urls'
@@ -119,7 +121,17 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.steam.SteamOpenId',
+    'django.contrib.auth.backends.ModelBackend',
+)
 
+SOCIAL_AUTH_STEAM_API_KEY = "EB5B41F19ED78469FD5923F3BA0C6330"
+
+# pro STEAM
+LOGIN_REDIRECT_URL = "/user_steam/"
+LOGOUT_REDIRECT_URL = "/"
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = "/user_steam/"
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 

@@ -14,6 +14,7 @@
             {% else %}
             <li><a href="{% url 'login' %}">Log in</a></li>
             {% endif %}
+            <li><a href="{% url 'social:begin' 'steam' %}">Přihlásit se přes Steam</a></li>
         </div>
     </ul>
 </nav>
