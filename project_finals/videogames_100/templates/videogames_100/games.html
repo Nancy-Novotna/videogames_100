@@ -15,6 +15,7 @@
             {% else %}
             <li><a href="{% url 'login' %}">Log in</a></li>
             {% endif %}
+            <li><a href="{% url 'social:begin' 'steam' %}">Steam login</a></li>
         </div>
     </ul>
 </nav>

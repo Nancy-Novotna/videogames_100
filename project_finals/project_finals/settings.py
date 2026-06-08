@@ -127,11 +127,13 @@ AUTHENTICATION_BACKENDS = (
 )
 
 SOCIAL_AUTH_STEAM_API_KEY = "EB5B41F19ED78469FD5923F3BA0C6330"
+# SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 
 # pro STEAM
-LOGIN_REDIRECT_URL = "/user_steam/"
+LOGIN_URL = "/auth/login/steam/"
+LOGIN_REDIRECT_URL = "/users/"
 LOGOUT_REDIRECT_URL = "/"
-SOCIAL_AUTH_LOGIN_REDIRECT_URL = "/user_steam/"
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = "/users/"
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
