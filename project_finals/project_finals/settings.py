@@ -87,16 +87,8 @@ WSGI_APPLICATION = 'project_finals.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'videogames_100_v2',
-        'USER': 'root',
-        'PASSWORD': '',
-        # Emptyforlocalhostthroughdomainsocketsor'127.0.0.1' for  through TCP.
-        'HOST': '',
-        'PORT': '',  # Set to empty string for default.
-        "OPTIONS": {
-            "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
-        }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
