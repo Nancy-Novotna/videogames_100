@@ -24,6 +24,8 @@ class Game(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     
     picture = models.ImageField(default='default.jpg', blank=True)
+    
+    slug = models.SlugField(default="", null=False)
 
     def __str__(self):
         return self.title

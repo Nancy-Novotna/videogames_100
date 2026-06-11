@@ -1,0 +1,16 @@
+{% extends "videogames_100/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<h1 class="title">{{ game.title }}</h1>
+<br>
+<br>
+<section id="details">
+    <div class="about">
+        <p><strong>About:</strong> {{ game.description }}</p>
+        <p><strong>Platinum Difficulty:</strong> {{ game.platinum_difficulty }}</p>
+    </div>
+</section>
+
+{% endblock %}
